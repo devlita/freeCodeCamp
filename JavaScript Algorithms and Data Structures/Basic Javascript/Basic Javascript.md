@@ -7,7 +7,7 @@
 2. [Declarations](#declarations)
 3. [Strings](#strings)
     * [Escape Sequences in Strings](#escape-equences-in-strings)
-    * [World Blanks](#world-blanks)
+    * [Word Blanks](#word-blanks)
 
 ## Credits
 freeCodeCamp (https://www.freecodecamp.org/)
