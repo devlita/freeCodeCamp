@@ -1,13 +1,18 @@
 ## Index
 1. [Operators](#operators)
-    * [Arithmetic](#arithmetic)
-    * [Comparison](#comparison)
-    * [Logical](#logical)
-    * [Type](#type)
+   * [Arithmetic](#arithmetic)
+   * [Comparison](#comparison)
+   * [Logical](#logical)
+   * [Type](#type)
 2. [Declarations](#declarations)
 3. [Strings](#strings)
-    * [Escape Sequences in Strings](#escape-equences-in-strings)
-    * [Word Blanks](#word-blanks)
+   * [Escape Sequences in Strings](#escape-equences-in-strings)
+   * [Word Blanks](#word-blanks)
+4. [Array](#arrays)
+   * [Shopping List](#shopping-list)
+5. [Functions](#functions)
+   * [Stand in Line](#stand-in-line)
+   * [Golf Code](#golf-code)
 
 ## Credits
 freeCodeCamp (https://www.freecodecamp.org/)
@@ -77,7 +82,7 @@ In JavaScript, String values are immutable, which means that they cannot be alte
 
 Concatenating Strings
 ```js
-var ourStr = "I come first. " + "I come second.";
+var ourStr = "I come first. " + "I come second."
 // ourStr is "I come first. I come second."
 ```
 
@@ -89,16 +94,16 @@ ourStr += "I come second."
 
 Constructing Strings with Variables
 ```js
-var ourName = "freeCodeCamp";
-var ourStr = "Hello, our name is " + ourName + ", how are you?";
+var ourName = "freeCodeCamp"
+var ourStr = "Hello, our name is " + ourName + ", how are you?"
 // ourStr is now "Hello, our name is freeCodeCamp, how are you?"
 ```
 
 Appending Variables to Strings
 ```js
-var anAdjective = "awesome!";
-var ourStr = "freeCodeCamp is ";
-ourStr += anAdjective;
+var anAdjective = "awesome!"
+var ourStr = "freeCodeCamp is "
+ourStr += anAdjective
 // ourStr is now "freeCodeCamp is awesome!"
 ```
 
@@ -118,11 +123,91 @@ var lastLetterOfLastName = lastName[lastName.length - 1]
 
 ### Word Blanks
 ```js
-var myNoun = "dog";
-var myAdjective = "big";
-var myVerb = "ran";
-var myAdverb = "quickly";
+var myNoun = "dog"
+var myAdjective = "big"
+var myVerb = "ran"
+var myAdverb = "quickly"
 
-var wordBlanks = "Once there was a " + myNoun + " which was very " + myAdjective + ". ";
-wordBlanks += "It " + myVerb + " " + myAdverb + " around the yard.";
+var wordBlanks = "Once there was a " + myNoun + " which was very " + myAdjective + ". "
+wordBlanks += "It " + myVerb + " " + myAdverb + " around the yard."
+```
+
+## Array
+```js
+// Store Multiple Values in one Variable using JavaScript Arrays
+var myArray = ["string", 1]
+
+// Nest one Array within Another Array
+var myArray = [["Bulls", 23], ["White Sox", 45]]
+
+// Manipulate Arrays With push()
+var myArray = [["John", 23], ["cat", 2]]
+myArray.push(["dog", 3]) // adds the element at the end of the array
+
+// Manipulate Arrays With pop()
+var myArray = [["John", 23], ["cat", 2]]
+var removedFromMyArray = myArray.pop() // removes the last element of an array
+
+// Manipulate Arrays With shift()
+var myArray = [["John", 23], ["dog", 3]]
+var removedFromMyArray = myArray.shift() // removes the first element of an array
+
+// Manipulate Arrays With unshift()
+var myArray = [["John", 23], ["dog", 3]]
+myArray.unshift(["Paul", 35]) // adds the element at the beginning of the array
+```
+
+### Shopping List
+```js
+var myList = [
+  ["Chocolate", 15],
+  ["Milk", 2],
+  ["Eggs", 12],
+  ["Bread", 1],
+  ["Butter", 1]
+]
+```
+
+## Functions
+```js
+// Write Reusable JavaScript with Functions
+function functionName() {
+  console.log("Hello World")
+}
+
+// Passing Values to Functions with Arguments
+function testFun(param1, param2) {
+  console.log(param1, param2)
+}
+```
+
+### Stand in Line
+```js
+function nextInLine(arr, item) {
+  arr.push(item)
+  return arr.shift()
+}
+
+var testArr = [1,2,3,4,5]
+console.log(nextInLine(testArr, 6)) // testArr = [2,3,4,5,6]
+```
+
+### Golf Code
+```js
+// if
+function golfScore(par, strokes) {
+  if (strokes == 1) {
+    return "Hole-in-one!"
+  } else if (strokes <= par - 2) {
+    return "Eagle"
+  } else if (strokes == par - 1) {
+    return "Birdie"
+  } else if (strokes === par) {
+    return "Par"
+  } else if (strokes == par + 1) {
+    return "Bogey"
+  } else if(strokes == par + 2) {
+    return "Double Bogey"
+  } else return "Go Home!";
+}
 ```
