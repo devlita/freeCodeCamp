@@ -15,7 +15,7 @@
    * [Golf Code](#golf-code)
 
 ## Credits
-freeCodeCamp (https://www.freecodecamp.org/)
+[freeCodeCamp](https://www.freecodecamp.org/)
 
 ## Operators
 ### Arithmetic
