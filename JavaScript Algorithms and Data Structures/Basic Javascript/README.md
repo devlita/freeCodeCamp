@@ -12,7 +12,9 @@
    * [Shopping List](#shopping-list)
 5. [Functions](#functions)
    * [Stand in Line](#stand-in-line)
-   * [Golf Code](#golf-code)
+6. [Control Structures](#control-structures)
+   * [If](#if)
+   * [Switch](#switch)
 
 ## Credits
 [freeCodeCamp](https://www.freecodecamp.org/)
@@ -192,9 +194,30 @@ var testArr = [1,2,3,4,5]
 console.log(nextInLine(testArr, 6)) // testArr = [2,3,4,5,6]
 ```
 
-### Golf Code
+### Returning Boolean Values from Functions
+You may recall from Comparison with the Equality Operator that all comparison operators return a boolean true or false value.
 ```js
-// if
+function isEqual(a,b) {
+  return a === b
+}
+```
+The above outputs "Hello" to the console, returns "World", but "byebye" is never output, because the function exits at the return statement.
+
+### Return Early Pattern for Functions
+When a return statement is reached, the execution of the current function stops and control returns to the calling location.
+```js
+function myFun() {
+  console.log("Hello");
+  return "World";
+  console.log("byebye")
+}
+```
+
+## Control Structures
+
+### If
+Golf Code
+```js
 function golfScore(par, strokes) {
   if (strokes == 1) {
     return "Hole-in-one!"
@@ -210,4 +233,35 @@ function golfScore(par, strokes) {
     return "Double Bogey"
   } else return "Go Home!";
 }
+```
+
+### Switch
+Counting Cards
+```js
+var count = 0
+
+function cc(card) {
+  switch(card) {
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+      count++
+      break
+    case 10:
+    case 'J':
+    case 'Q':
+    case 'K':
+    case 'A':
+      count--
+  }
+  if(count > 0) {
+    return count + " Bet"
+  } else {
+    return count + " Hold"
+  }
+}
+
+cc(2); cc(3); cc(7); cc('K'); cc('A')
 ```
